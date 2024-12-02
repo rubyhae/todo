@@ -20,7 +20,13 @@ def add_task(task_name): #할일 추가하는 함수
     save_task(tasks)
     
 def view_task():
-    pass
+    tasks = load_task()
+    if not tasks:
+        print("현재 등록된 작업이 없습니다.")
+    else :
+        print("작업 목록:")
+        for i task in enumerate(tasks, start=1):
+            print(f'{i}. {task_name} - {tasks["completed"]}')
 
 def complete_task(task_number):
     pass
