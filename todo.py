@@ -19,8 +19,17 @@ def add_task(task_name): #할일 추가하는 함수
     tasks.append(task)
     save_task(tasks)
     
-def view_task():
-    pass
+def view_task(): #할 일 목록보기, merge 진행
+    tasks = load_task()
+    if not tasks: #tasks는 if문을 만났을 때 false를 판별
+        print("현재 등록된 작업이 없습니다.")
+    else :
+        print("작업 목록:")
+        for i, task in enumerate(tasks, start=1): #enumerate() 인덱스를 같이 반환함
+        #enumerate() -> i = 1, task = {"name" : "파이썬 공부하기", "completed" : false }
+            status = "완료" if task['completed'] else "미완료" #dict는 키값을 넣으면 value를 돌려준다
+            print(f'{i}. {task["name"]} - task["completed]')
+
 
 def complete_task(task_number): #complete_task 머지 진행
     tasks = load_task() #tasks = [{"name":"파이썬 공부하기", "completed":false}, ]
