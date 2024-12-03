@@ -22,7 +22,7 @@ def add_task(task_name): #할일 추가하는 함수
 def view_task():
     pass
 
-def complete_task(task_number):
+def complete_task(task_number): #complete_task 머지 진행
     tasks = load_task() #tasks = [{"name":"파이썬 공부하기", "completed":false}, ]
     if 1 <= task_number <= len(tasks): #없는 번호를 입력할 경우, 번호를 잘못 입력했다 다시 입력해
         tasks[task_number - 1]["completed"] = True #tasks[0] => [{"name":"파이썬 공부하기", "completed":false}]
