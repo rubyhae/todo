@@ -28,7 +28,7 @@ def view_task(): #할 일 목록보기, merge 진행
         for i, task in enumerate(tasks, start=1): #enumerate() 인덱스를 같이 반환함
         #enumerate() -> i = 1, task = {"name" : "파이썬 공부하기", "completed" : false }
             status = "완료" if task['completed'] else "미완료" #dict는 키값을 넣으면 value를 돌려준다
-            print(f'{i}. {task["name"]} - task["completed]')
+            print(f'{i}. {task["name"]} - {status}')
 
 
 def complete_task(task_number): #complete_task 머지 진행
