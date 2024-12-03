@@ -26,7 +26,12 @@ def complete_task(task_number):
     pass
 
 def delete_task(task_number):
-    pass
+    tasks = load_task()
+    if 1 <= task_number <= len(tasks):
+        delete_tsk = tasks.pop(task_number-1) #index 값 넣어줘야함 / pop() 통해서 삭제 및 반환되고 삭제된 데이터가 delete_tsk에 담김
+        save_task(tasks) 
+        print(f'할 일 : {delete_tsk["name"]}이(가) 삭제되었습니다. ')
+
 
 def show_menu():
     print("작업 관리 애플리케이션") #메뉴를 보여주는 함수
